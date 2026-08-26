@@ -2,12 +2,18 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { ShieldCheck, Zap, Anchor, Car, Phone, Sparkles, ChevronRight } from 'lucide-react';
+import { Leaf, Zap, Anchor, Car, Phone, Sparkles, ChevronRight } from 'lucide-react';
 import InteractiveServices from './components/InteractiveServices';
 import QuoteModal from './components/QuoteModal';
 
 export default function Home() {
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
+  const [modalCategory, setModalCategory] = useState<'auto' | 'boat' | 'maintenance' | undefined>(undefined);
+
+  const openModalWithCategory = (category?: 'auto' | 'boat' | 'maintenance') => {
+    setModalCategory(category);
+    setIsQuoteOpen(true);
+  };
 
   return (
     <div className="min-h-screen text-slate-900 font-sans relative bg-gradient-to-b from-[#f4f7f5] via-[#eef5f2] to-[#faf8f5] selection:bg-emerald-900 selection:text-emerald-100 overflow-hidden">
@@ -19,7 +25,11 @@ export default function Home() {
       <div className="absolute bottom-0 right-1/4 w-[700px] h-[600px] bg-gradient-to-t from-emerald-300/25 via-teal-200/30 to-transparent blur-[140px] rounded-full pointer-events-none -z-10" />
 
       {/* Modal Integration */}
-      <QuoteModal isOpen={isQuoteOpen} onClose={() => setIsQuoteOpen(false)} />
+      <QuoteModal 
+        isOpen={isQuoteOpen} 
+        onClose={() => setIsQuoteOpen(false)} 
+        initialServiceType={modalCategory} 
+      />
 
       {/* Navigation */}
       <header className="sticky top-0 z-40 backdrop-blur-2xl bg-white/70 border-b border-emerald-900/10 shadow-[0_4px_30px_rgba(6,78,59,0.04)]">
@@ -35,12 +45,13 @@ export default function Home() {
           
           <nav className="hidden md:flex gap-8 text-sm font-semibold text-slate-700">
             <a href="#services" className="hover:text-emerald-700 transition-colors">Services</a>
+            <a href="#maintenance" className="hover:text-emerald-700 transition-colors">Maintenance</a>
             <a href="#about" className="hover:text-emerald-700 transition-colors">Quality</a>
             <a href="#contact" className="hover:text-emerald-700 transition-colors">Contact</a>
           </nav>
           
           <button
-            onClick={() => setIsQuoteOpen(true)}
+            onClick={() => openModalWithCategory()}
             className="bg-gradient-to-r from-emerald-950 via-teal-900 to-slate-900 hover:from-emerald-900 hover:to-teal-800 text-amber-300 font-bold px-4 sm:px-6 py-2 rounded-full transition-all duration-300 text-xs sm:text-sm shadow-md shadow-emerald-950/20 hover:-translate-y-0.5"
           >
              Get a Quote
@@ -88,7 +99,7 @@ export default function Home() {
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <button
-              onClick={() => setIsQuoteOpen(true)}
+              onClick={() => openModalWithCategory()}
               className="w-full sm:w-auto bg-white/80 hover:bg-white text-emerald-950 font-bold px-8 sm:px-10 py-3.5 sm:py-4.5 rounded-2xl transition-all duration-300 text-base sm:text-lg border border-emerald-900/15 shadow-lg shadow-emerald-900/5 backdrop-blur-md hover:-translate-y-1"
             >
               Get Instant Quote
@@ -115,6 +126,54 @@ export default function Home() {
           <div className="bg-white/40 backdrop-blur-xl border border-white/60 p-4 sm:p-8 md:p-10 rounded-[2rem] sm:rounded-[2.5rem] shadow-xl shadow-emerald-900/5">
             <InteractiveServices />
           </div>
+        </div>
+      </section>
+
+      {/* Monthly Maintenance Section */}
+      <section id="maintenance" className="py-16 sm:py-24 relative max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12">
+          <span className="text-xs font-bold uppercase tracking-widest text-emerald-800 bg-emerald-100/90 border border-emerald-300/60 px-3.5 py-1 rounded-full shadow-sm">
+            Monthly Maintenance Plan
+          </span>
+          <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 mt-4 mb-3">
+            $30 CAD Per Service A-La-Carte
+          </h2>
+          <p className="text-slate-600 max-w-xl mx-auto text-sm sm:text-base">
+            Keep your vehicle in showroom condition year-round. Mix and match individual services to build your customized routine maintenance package.
+          </p>
+          <p className="text-emerald-950 font-bold text-xs mt-2">
+            * Minimum selection of 3 services required per booking ($90 CAD minimum).
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-10">
+          {[
+            { title: 'Exterior Hand Wash', desc: 'pH-balanced foam hand wash & microfiber dry' },
+            { title: 'Interior Deep Vacuum', desc: 'Detailed carpet, seat, and trunk suction' },
+            { title: 'Dashboard Wipe Down', desc: 'Sanitizing dust and fingerprint removal' },
+            { title: 'Seat Spot Shampoo', desc: 'Targeted stain and upholstery refresh' },
+            { title: 'Tire Shine & Polish', desc: 'High-gloss anti-browning tire dressing' },
+            { title: 'Interior UV Protectant', desc: 'Fade prevention for vinyl and plastics' },
+            { title: 'Streak-Free Glass', desc: 'Crystal-clear interior & exterior window clean' },
+            { title: 'Floor Mat Wash', desc: 'Rubber mat wash or carpet mat agitation' },
+          ].map((item, idx) => (
+            <div key={idx} className="p-5 bg-white/70 backdrop-blur-md border border-emerald-900/10 rounded-2xl shadow-sm hover:shadow-md transition">
+              <div className="flex items-center justify-between mb-2">
+                <span className="font-extrabold text-slate-900 text-base">{item.title}</span>
+                <span className="text-xs font-black text-amber-600 bg-amber-100/80 px-2 py-0.5 rounded-md">$30 CAD</span>
+              </div>
+              <p className="text-xs text-slate-600 leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center">
+          <button
+            onClick={() => openModalWithCategory('maintenance')}
+            className="bg-gradient-to-r from-emerald-900 via-teal-900 to-slate-900 hover:from-emerald-800 hover:to-teal-800 text-amber-300 font-extrabold px-8 py-4 rounded-2xl text-base shadow-xl transition hover:-translate-y-0.5 inline-flex items-center gap-2"
+          >
+            <Sparkles className="w-5 h-5 text-amber-300" /> Build Your Maintenance Bundle
+          </button>
         </div>
       </section>
 
@@ -157,18 +216,18 @@ export default function Home() {
 
           {/* Card 3 */}
           <div className="p-6 sm:p-8 bg-white/60 backdrop-blur-xl border border-white/80 rounded-3xl group transition-all duration-300 hover:border-amber-500 hover:bg-white/80 hover:shadow-2xl hover:shadow-amber-950/10 hover:-translate-y-1.5 relative overflow-hidden">
-            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-tr from-amber-600 to-emerald-800 rounded-2xl flex items-center justify-center mb-5 sm:mb-6 shadow-lg shadow-amber-900/20 text-white">
-              <ShieldCheck className="w-6 h-6 sm:w-7 sm:h-7 group-hover:scale-110 transition-transform" />
+            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-tr from-amber-600 to-emerald-800 rounded-2xl flex items-center justify-center mb-5 sm:mb-6 shadow-lg shadow-amber-900/20 text-amber-300">
+              <Leaf className="w-6 h-6 sm:w-7 sm:h-7 group-hover:scale-110 transition-transform" />
             </div>
-            <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-slate-900">Certified Protection</h3>
+            <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-slate-900">Eco-Friendly Premium Formulas</h3>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Accredited installers of premium ceramic coatings with verified durability warranties for vehicles and watercraft.
+              We exclusively use pH-neutral, biodegradable shampoos and high-grade professional ceramic sealants safe for both your vehicle and the environment.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Call-To-Action Banner (Fixed Mobile Layout) */}
+      {/* Call-To-Action Banner */}
       <section id="contact" className="py-16 sm:py-24 px-4 sm:px-6 relative">
         <div className="max-w-5xl mx-auto">
           <div className="relative bg-gradient-to-r from-emerald-950 via-teal-950 to-slate-950 border border-emerald-800/40 p-6 sm:p-10 md:p-16 rounded-[2rem] sm:rounded-[2.5rem] shadow-2xl shadow-emerald-950/20 text-white overflow-hidden">
@@ -182,7 +241,6 @@ export default function Home() {
                 Ready to Experience Glossiva?
               </h2>
               
-              {/* Responsive Phone & Quote Box */}
               <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 bg-white/10 backdrop-blur-xl border border-white/15 p-4 sm:p-6 md:p-8 rounded-2xl max-w-3xl mx-auto">
                 <div className="flex items-center gap-3 sm:gap-4 w-full sm:w-auto justify-center">
                   <div className="p-3 sm:p-4 bg-white/20 rounded-xl sm:rounded-2xl backdrop-blur-md border border-white/20 shrink-0">
@@ -199,7 +257,7 @@ export default function Home() {
                 <div className="h-12 w-px bg-white/20 hidden sm:block" />
                 
                 <button
-                  onClick={() => setIsQuoteOpen(true)}
+                  onClick={() => openModalWithCategory()}
                   className="w-full sm:w-auto bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl transition-all duration-300 text-base sm:text-lg shadow-lg hover:shadow-amber-400/20 hover:scale-[1.02]"
                 >
                   Get Instant Quote
