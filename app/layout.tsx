@@ -39,13 +39,6 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Glossiva Detailing | Premium Mobile Detailing",
-    description:
-      "100% Mobile Service — We Come To You! Professional automotive detailing and marine restoration.",
-    images: ["/icon.png"],
-  },
 };
 
 export default function RootLayout({
@@ -58,7 +51,9 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col bg-white text-slate-900 selection:bg-emerald-100 selection:text-emerald-900">
+        {children}
+      </body>
     </html>
   );
 }
