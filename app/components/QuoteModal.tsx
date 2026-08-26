@@ -35,15 +35,20 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
   const calculatePrice = (): number => {
     if (serviceType === 'auto') {
       let base = 0;
-      if (vehicleType === 'sedan') {
-        base = autoScope === 'full' ? 180 : 160;
-      } else if (vehicleType === 'suv') {
-        base = autoScope === 'full' ? 200 : 180;
-      } else if (vehicleType === 'truck') {
-        base = autoScope === 'full' ? 250 : 230;
+      
+      // Full detailing pricing by vehicle size
+      if (vehicleType === 'sedan') base = 200;
+      if (vehicleType === 'suv') base = 230;
+      if (vehicleType === 'truck') base = 250;
+
+      // Interior only option is $30 less than full detailing
+      if (autoScope === 'interior') {
+        base -= 30;
       }
       
+      // Add-ons
       if (hasPetHair) base += 40;
+      
       return base;
     } 
     
@@ -190,7 +195,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                         autoScope === 'interior' ? 'bg-blue-600 border-blue-500 text-white' : 'bg-[#161b22] border-[#21262d] text-slate-300'
                       }`}
                     >
-                      Interior Only
+                      Interior Only (-$30)
                     </button>
                   </div>
                 </div>
@@ -278,7 +283,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                 <input
                   type="tel"
                   required
-                  placeholder="(555) 000-0000"
+                  placeholder="(604) 000-0000"
                   value={clientPhone}
                   onChange={(e) => setClientPhone(e.target.value)}
                   className="w-full bg-[#161b22] border border-[#21262d] rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500"
