@@ -40,11 +40,11 @@ export default function Home() {
         {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/bg-hero.jpg" // Place your image in public/hero-bg.jpg
-            alt="Glossiva Detailing Background"
+            src="/bg-hero.jpg"
+            alt="Glossiva Mobile Detailing Background"
             fill
             priority
-            className="object-cover object-center opacity-90" // Adjust opacity as needed
+            className="object-cover object-center opacity-40"
           />
           {/* Dark Overlay Gradient for Readability */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#02040a]/80 via-[#02040a]/60 to-[#02040a]" />
@@ -52,8 +52,8 @@ export default function Home() {
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-7xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2.5 bg-blue-950/70 backdrop-blur-md border border-blue-800/60 text-blue-200 px-5 py-2 rounded-full text-xs font-bold mb-8 shadow-inner shadow-blue-900/50">
-            <Zap className="w-4 h-4 text-blue-400" /> Premium Automotive & Marine Care
+          <div className="inline-flex items-center gap-2.5 bg-blue-950/80 backdrop-blur-md border border-blue-800/70 text-blue-200 px-5 py-2 rounded-full text-xs font-bold mb-8 shadow-inner shadow-blue-900/50">
+            <Zap className="w-4 h-4 text-blue-400" /> 100% Mobile Service — We Come To You!
           </div>
           
           <h1 className="text-5xl sm:text-7xl font-extrabold tracking-tighter mb-8 leading-[0.95]">
@@ -64,7 +64,7 @@ export default function Home() {
           </h1>
           
           <p className="text-slate-300 max-w-3xl mx-auto text-xl mb-12 leading-relaxed drop-shadow-md">
-            From precise <span className='text-white font-semibold'>paint correction</span> to long-lasting <span className='text-white font-semibold'>ceramic protection</span> and specialized <span className='text-white font-semibold'>marine restoration</span>.
+            Premium mobile automotive detailing & marine restoration brought straight to your <span className='text-white font-semibold'>driveway, dock, or marina</span>.
           </p>
           
           <div className="flex justify-center gap-5">
@@ -107,23 +107,23 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="p-8 bg-[#0d1117] border border-[#21262d] rounded-2xl group transition-all hover:border-sky-800">
             <Car className="w-12 h-12 text-sky-400 mb-6 group-hover:animate-pulse" />
-            <h3 className="text-2xl font-bold mb-3 text-white">Automotive Perfection</h3>
+            <h3 className="text-2xl font-bold mb-3 text-white">Mobile Automotive Care</h3>
             <p className="text-slate-400 text-base leading-relaxed">
-              We apply advanced machine polishing and interior revitalization techniques.
+              We bring professional machine polishing, ceramic coating, and deep interior restoration directly to your doorstep.
             </p>
           </div>
           <div className="p-8 bg-[#0d1117] border border-[#21262d] rounded-2xl group transition-all hover:border-teal-800">
             <Anchor className="w-12 h-12 text-teal-400 mb-6 group-hover:animate-pulse" />
-            <h3 className="text-2xl font-bold mb-3 text-white">Marine Specialists</h3>
+            <h3 className="text-2xl font-bold mb-3 text-white">On-Site Marine Detailing</h3>
             <p className="text-slate-400 text-base leading-relaxed">
-              Gelcoat restoration, oxidation removal, and hull sealing designed for salt water environments.
+              Gelcoat restoration, oxidation removal, and hull sealing performed right at your dock or marina.
             </p>
           </div>
           <div className="p-8 bg-[#0d1117] border border-[#21262d] rounded-2xl group transition-all hover:border-rose-800">
             <ShieldCheck className="w-12 h-12 text-rose-400 mb-6 group-hover:animate-pulse" />
             <h3 className="text-2xl font-bold mb-3 text-white">Certified Protection</h3>
             <p className="text-slate-400 text-base leading-relaxed">
-              Accredited installers of premium ceramic coatings with verified durability warranties.
+              Accredited installers of premium ceramic coatings with verified durability warranties for vehicles and watercraft.
             </p>
           </div>
         </div>
