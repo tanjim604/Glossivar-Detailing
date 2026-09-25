@@ -54,9 +54,9 @@ export default function QuoteModal({ isOpen, onClose, initialServiceType }: Quot
 
   const calculatePrice = (): number => {
     if (serviceType === 'auto') {
-      let base = 200;
-      if (vehicleType === 'suv') base = 230;
-      if (vehicleType === 'truck') base = 250;
+      let base = 230;
+      if (vehicleType === 'suv') base = 260;
+      if (vehicleType === 'truck') base = 280;
       if (autoScope === 'interior') base -= 30;
       if (hasPetHair) base += 40;
       return base;
@@ -246,16 +246,22 @@ export default function QuoteModal({ isOpen, onClose, initialServiceType }: Quot
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Vehicle Type</label>
                   <div className="grid grid-cols-3 gap-2">
-                    {(['sedan', 'suv', 'truck'] as const).map((type) => (
+                    {[
+                      { id: 'sedan', label: 'Sedan' },
+                      { id: 'suv', label: 'SUV' },
+                      { id: 'truck', label: 'Truck/Van' },
+                    ].map((item) => (
                       <button
-                        key={type}
+                        key={item.id}
                         type="button"
-                        onClick={() => setVehicleType(type)}
-                        className={`py-2.5 rounded-lg text-sm font-semibold capitalize border ${
-                          vehicleType === type ? 'bg-blue-600 border-blue-500 text-white' : 'bg-[#161b22] border-[#21262d] text-slate-300'
+                        onClick={() => setVehicleType(item.id as 'sedan' | 'suv' | 'truck')}
+                        className={`py-2.5 rounded-lg text-sm font-semibold border transition ${
+                          vehicleType === item.id 
+                            ? 'bg-blue-600 border-blue-500 text-white' 
+                            : 'bg-[#161b22] border-[#21262d] text-slate-300'
                         }`}
                       >
-                        {type}
+                        {item.label}
                       </button>
                     ))}
                   </div>
