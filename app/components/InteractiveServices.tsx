@@ -21,7 +21,7 @@ const servicesData: Service[] = [
     id: 'full-detail',
     title: 'Showroom Interior & Exterior',
     category: 'Auto',
-    price: '$170+',
+    price: '$200+',
     description: 'Deep revitalization using premium polymers and steam cleaning.',
     longDescription: 'Our signature full detailing service brings out the best in your vehicle. We combine a deep carpet, seat, and panel interior refresh with a full shampoo exterior hand scrub, microfiber dry, wax protection, and tire shine.',
     image: 'https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=80&w=800&auto=format&fit=crop',
