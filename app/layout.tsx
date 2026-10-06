@@ -71,6 +71,8 @@ const jsonLd = {
   image: `${SITE_URL}/icon.png`,
   logo: `${SITE_URL}/icon.png`,
   telephone: "+1-604-782-9107",
+  hasMap: "https://maps.app.goo.gl/MCVc9N6aNdGGfWrS9",
+  sameAs: ["https://maps.app.goo.gl/MCVc9N6aNdGGfWrS9"],
   priceRange: "$$",
   areaServed: { "@type": "City", name: "Kamloops", containedInAddress: { "@type": "AdministrativeArea", name: "British Columbia" } },
   address: { "@type": "PostalAddress", addressLocality: "Kamloops", addressRegion: "BC", addressCountry: "CA" },
