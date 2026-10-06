@@ -59,6 +59,7 @@ export default function Home() {
         </div>
       </header>
 
+      <main>
       {/* Hero Section */}
       <section className="relative pt-12 sm:pt-20 pb-24 sm:pb-36 px-4 sm:px-6 overflow-hidden">
         {/* Background Overlay */}
@@ -267,6 +268,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      </main>
 
       {/* Footer */}
       <footer className="py-8 sm:py-10 text-center text-xs sm:text-sm font-medium text-slate-500 border-t border-emerald-900/10 bg-white/40 backdrop-blur-md">
