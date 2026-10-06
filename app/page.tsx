@@ -87,7 +87,7 @@ export default function Home() {
           </h1>
           
           <p className="text-slate-700 max-w-3xl mx-auto text-base sm:text-xl lg:text-2xl mb-8 sm:mb-12 leading-relaxed font-normal px-2">
-            Premium mobile automotive detailing & marine restoration brought straight to your <span className="text-emerald-950 font-semibold underline decoration-amber-500/60 decoration-2 underline-offset-4">driveway, dock, or marina</span>.
+            Premium mobile automotive & boat detailing in Kamloops, BC brought straight to your <span className="text-emerald-950 font-semibold underline decoration-amber-500/60 decoration-2 underline-offset-4">driveway, dock, or marina</span>.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center items-center gap-3.5 sm:gap-5 max-w-xs sm:max-w-none mx-auto">
@@ -199,7 +199,7 @@ export default function Home() {
             </div>
             <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-slate-900">Mobile Automotive Care</h3>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              We bring professional machine polishing, ceramic coating, and deep interior restoration directly to your doorstep.
+              We bring complete interior and exterior vehicle detailing directly to your doorstep in Kamloops.
             </p>
           </div>
 
@@ -210,7 +210,7 @@ export default function Home() {
             </div>
             <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-slate-900">On-Site Marine Detailing</h3>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Gelcoat restoration, oxidation removal, and hull sealing performed right at your dock or marina.
+              Complete boat detailing, hull cleaning, and wax protection performed right at your dock or marina.
             </p>
           </div>
 
@@ -221,7 +221,7 @@ export default function Home() {
             </div>
             <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-slate-900">Eco-Friendly Premium Formulas</h3>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              We exclusively use pH-neutral, biodegradable shampoos and high-grade professional ceramic sealants safe for both your vehicle and the environment.
+              We exclusively use pH-neutral, biodegradable shampoos and high-grade professional waxes and sealants safe for both your vehicle and the environment.
             </p>
           </div>
         </div>

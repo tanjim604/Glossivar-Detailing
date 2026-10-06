@@ -7,7 +7,7 @@ import { X, CheckCircle2 } from 'lucide-react';
 interface Service {
   id: string;
   title: string;
-  category: 'Auto' | 'Marine' | 'Paint Correction' | 'Ceramic';
+  category: 'Auto' | 'Marine';
   price: string;
   description: string;
   longDescription: string;
@@ -38,37 +38,15 @@ const servicesData: Service[] = [
     ],
   },
   {
-    id: 'cut-polish',
-    title: 'Stage 2 Paint Correction',
-    category: 'Paint Correction',
-    price: '$550+',
-    description: 'Eliminate 85%+ of swirl marks, light scratches, and oxidation.',
-    longDescription: 'For vehicles that have lost their luster. We analyze paint depth, then execute a precision heavy-cut compounding stage to level defects, followed by a finishing polish to generate ultimate clarity and reflection. Highly recommended before Ceramic Coating.',
-    image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=800&auto=format&fit=crop',
-    accentColor: 'text-purple-400',
-    features: ['Multi-stage machine polishing', 'Defect removal analysis', 'Panel wipe prep', 'Gloss enhancement'],
-  },
-  {
     id: 'boat-detail',
     title: 'Marine Restoration & Gelcoat',
     category: 'Marine',
     price: '$40/ft',
     description: 'Bring the shine back to faded hulls and oxidized gelcoat.',
-    longDescription: 'Marine environments are brutal. We specialize in gelcoat restoration, using heavy-duty compounding to remove severe oxidation (fading), followed by specialized marine polishes and a durable marine-grade wax or sealant to protect your investment from salt and UV.',
+    longDescription: 'Marine environments are brutal. We specialize in gelcoat restoration, with a thorough hull and deck clean and a durable marine-grade wax or sealant to protect your investment from salt and UV.',
     image: 'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=800&auto=format&fit=crop',
     accentColor: 'text-teal-400',
-    features: ['Oxidation removal compounding', 'Hull scum line removal', 'Teak cleaning', 'Marine vinyl protection'],
-  },
-  {
-    id: 'ceramic',
-    title: 'Gtechniq Ceramic Protection',
-    category: 'Ceramic',
-    price: '$999+',
-    description: 'Ultra-hydrophobic 9H hardness layer for years of protection.',
-    longDescription: 'The ultimate protection. We apply a Gtechniq accredited ceramic coating, creating a permanent chemical bond with your paintwork. This results in extreme gloss, incredible water repellency (beading), easy maintenance, and certified protection against chemical staining, UV rays, and bird droppings for 3-9 years.',
-    image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop',
-    accentColor: 'text-rose-400',
-    features: ['Certified 9H Hardness', '3, 5, or 9 Year Warranties', 'Incredible hydrophobic properties', 'Includes polishing preparation'],
+    features: ['Hull scum line removal', 'Teak cleaning', 'Marine vinyl protection'],
   },
 ];
 
