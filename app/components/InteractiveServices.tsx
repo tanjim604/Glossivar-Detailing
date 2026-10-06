@@ -89,7 +89,7 @@ export default function InteractiveServices() {
               <div className="relative aspect-[16/10] overflow-hidden w-full">
                 <Image
                   src={service.image}
-                  alt={service.title}
+                  alt={`${service.title} – mobile detailing in Kamloops`}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
@@ -163,7 +163,7 @@ export default function InteractiveServices() {
             <div className="relative aspect-[16/9] rounded-xl overflow-hidden mb-8 border border-[#21262d]">
                 <Image
                     src={selectedService.image}
-                    alt={selectedService.title}
+                    alt={`${selectedService.title} – mobile detailing in Kamloops`}
                     fill
                     className="object-cover"
                 />

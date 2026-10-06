@@ -65,7 +65,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/bg-hero.jpg"
-            alt="Glossiva Mobile Detailing Background"
+            alt="Glossiva mobile car and boat detailing in Kamloops, BC"
             fill
             priority
             className="object-cover object-center opacity-15 mix-blend-overlay"
@@ -116,7 +116,7 @@ export default function Home() {
               Our Craft
             </span>
             <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 mt-4 mb-3 sm:mb-4">
-              Our Elite Services
+              Our Mobile Detailing Services in Kamloops
             </h2>
             <p className="text-slate-600 max-w-xl mx-auto text-sm sm:text-lg px-2">
               Click any service card below to view our detailed process and custom options.
@@ -270,7 +270,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="py-8 sm:py-10 text-center text-xs sm:text-sm font-medium text-slate-500 border-t border-emerald-900/10 bg-white/40 backdrop-blur-md">
-        © {new Date().getFullYear()} Glossiva Detailing. All rights reserved.
+        © {new Date().getFullYear()} Glossiva Detailing — Mobile car &amp; boat detailing in Kamloops, BC. All rights reserved.
       </footer>
     </div>
   );
