@@ -17,11 +17,11 @@ const SITE_URL = "https://www.glossivadetailing.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Glossiva Detailing | Premium Mobile Automotive & Marine Detailing",
+    default: "Mobile Car & Boat Detailing Kamloops | Glossiva Detailing",
     template: "%s | Glossiva Detailing",
   },
   description:
-    "100% mobile car and boat detailing in Kamloops, BC. Complete interior & exterior vehicle detailing, boat detailing and monthly maintenance plans, brought to your driveway, dock or marina. Call (604) 782-9107.",
+    "Glossiva Detailing: 100% mobile car and boat detailing in Kamloops, BC. Interior & exterior detail, marine detailing and monthly plans. Call (604) 782-9107.",
   applicationName: "Glossiva Detailing",
   keywords: [
     "Kamloops mobile car detailing",
